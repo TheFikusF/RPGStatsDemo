@@ -1,0 +1,36 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="RPGStatsMaker.MainWindow"
+        Title="RPGStatsMaker">
+    <Window.Styles>
+        <Style Selector="StackPanel.ChosePanel">
+            <Setter Property="Margin" Value="5"></Setter>
+        </Style>
+        <Style Selector="ComboBox.ChosePanelElement">
+            <Setter Property="Margin" Value="5"></Setter>
+        </Style>
+        <Style Selector="TextBox.ChosePanelElement">
+            <Setter Property="Margin" Value="5"></Setter>
+        </Style>
+        <Style Selector="Button.ChosePanelElement">
+            <Setter Property="Margin" Value="5"></Setter>
+        </Style>
+    </Window.Styles>
+    <StackPanel>
+        <Label x:Name="mainLabel" Content="hello"></Label>
+        <StackPanel Classes="ChosePanel" Orientation="Horizontal">
+            <ComboBox Classes="ChosePanelElement" x:Name="StatTypeBox" Width="120" PropertyChanged="StatTypeChanged" SelectedIndex="0"></ComboBox>
+            <ComboBox Classes="ChosePanelElement" x:Name="SelfTypeBox" Width="120" PropertyChanged="StatTypeChanged" SelectedIndex="0"></ComboBox>
+            <ComboBox Classes="ChosePanelElement" x:Name="DamageTypeBox" Width="120" PropertyChanged="StatTypeChanged" SelectedIndex="0"></ComboBox>
+            <ComboBox Classes="ChosePanelElement" x:Name="IncreaseTypeBox" Width="120" PropertyChanged="StatTypeChanged" SelectedIndex="0"></ComboBox>
+            <TextBox Classes="ChosePanelElement" x:Name="ValueBox" Width="120"></TextBox>
+            <Button x:Name="AddButton" Click="AddAction" Content="+"/>
+        </StackPanel>
+        <StackPanel x:Name="MainStack">
+            
+        </StackPanel>
+    </StackPanel>
+</Window>

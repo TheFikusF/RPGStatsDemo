@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="RPGStatsMaker/App.axaml" value="RPGStatsMaker/RPGStatsMaker.csproj" />
+        <entry key="RPGStatsMaker/MainWindow.axaml" value="RPGStatsMaker/RPGStatsMaker.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
