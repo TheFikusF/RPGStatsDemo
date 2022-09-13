@@ -70,6 +70,11 @@ public class CooldownReductionStat : Stat
 
         return l.Sum(x => x.Value);
     }
+    
+    public override string ToString()
+    {
+        return IncreasType + " " + Value + " " + " cooldown reduction to " + Source;
+    }
 }
 
 public class CastSpeedStat : Stat
@@ -87,6 +92,11 @@ public class CastSpeedStat : Stat
                         x.IncreasType == IncreasType);
 
         return l.Sum(x => x.Value);
+    }
+    
+    public override string ToString()
+    {
+        return IncreasType + " " + Value + " " + " cast speed to " + Source;
     }
 }
 

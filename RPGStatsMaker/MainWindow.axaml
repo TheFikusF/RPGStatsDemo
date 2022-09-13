@@ -25,6 +25,7 @@
             <ComboBox Classes="ChosePanelElement" x:Name="StatTypeBox" Width="120" PropertyChanged="StatTypeChanged" SelectedIndex="0"></ComboBox>
             <ComboBox Classes="ChosePanelElement" x:Name="SelfTypeBox" Width="120" PropertyChanged="StatTypeChanged" SelectedIndex="0"></ComboBox>
             <ComboBox Classes="ChosePanelElement" x:Name="DamageTypeBox" Width="120" PropertyChanged="StatTypeChanged" SelectedIndex="0"></ComboBox>
+            <ComboBox Classes="ChosePanelElement" x:Name="SourceTypeBox" Width="120" PropertyChanged="StatTypeChanged" SelectedIndex="0"></ComboBox>
             <ComboBox Classes="ChosePanelElement" x:Name="IncreaseTypeBox" Width="120" PropertyChanged="StatTypeChanged" SelectedIndex="0"></ComboBox>
             <TextBox Classes="ChosePanelElement" x:Name="ValueBox" Width="120"></TextBox>
             <Button x:Name="AddButton" Click="AddAction" Content="+"/>
