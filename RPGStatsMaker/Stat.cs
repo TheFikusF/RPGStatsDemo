@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 
-namespace RPGStatsMaker;
+namespace RPGStatsMaker.Stats;
 
 public enum SelfType
 {

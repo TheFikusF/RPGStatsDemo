@@ -4,18 +4,19 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Layout;
+using RPGStatsMaker.Stats;
 
 namespace RPGStatsMaker
 {
     public partial class MainWindow : Window
     {
-        private PlayerStats _playerStats;
+        private Character _player;
         private Subject<string> _firedamage;
         public MainWindow()
         {
             _firedamage = new Subject<string>();
-            _playerStats = new PlayerStats();
-            var num = _playerStats.GetDamageValue(100, SourceType.Spell, DamageType.Fire);
+            _player = new PlayerCharacter();
+            var num = _player.Stats.GetDamageValue(100, SourceType.Spell, DamageType.Fire);
             InitializeComponent();
             StatTypeBox.Items = new[]{ typeof(DamageStat), typeof(CooldownReductionStat), typeof(CastSpeedStat)};
             SelfTypeBox.Items = Enum.GetValues<SelfType>();
@@ -81,37 +82,44 @@ namespace RPGStatsMaker
             return stat != null;
         }
 
-        private void AddAction(object? sender, RoutedEventArgs e)
+        private void CreateStatLabel(Stat s)
         {
-            var l = new Label();
-            var b = new Button();
+            var statLabel = new Label();
+            var removeButton = new Button();
             var panel = new StackPanel();
-            
-            if(!TryGetNewStat(out Stat s)) return;
 
-            _playerStats.AddStat(s);
-
-            b.Content = "-";
-            b.Click += (object? sender, RoutedEventArgs e) =>
+            void RemoveButtonFunc(object? sender, RoutedEventArgs e)
             {
-                _playerStats.RemoveStat(s);
-                var num = _playerStats.GetDamageValue(100, SourceType.Spell, DamageType.Fire);
+                _player.Stats.RemoveStat(s);
+                var num = _player.Stats.GetDamageValue(100, SourceType.Spell, DamageType.Fire);
                 _firedamage.OnNext("damage: " + Math.Round(num, 2));
                 MainStack.Children.Remove(panel);
-                b = null;
-                l = null;
+                removeButton.Click -= RemoveButtonFunc;
+                removeButton = null;
+                statLabel = null;
                 panel = null;
-            };
+            }
             
-            l.Content = s.ToString();
-            l.Width = 350;
-            var num = _playerStats.GetDamageValue(100, SourceType.Spell, DamageType.Fire);
-            _firedamage.OnNext("damage: " + Math.Round(num, 2));
+            removeButton.Content = "-";
+            removeButton.Click += RemoveButtonFunc;
+
+            statLabel.Content = s.ToString();
+            statLabel.Width = 350;
             MainStack.Children.Add(panel);
-            panel.Children.Add(l);
             panel.Orientation = Orientation.Horizontal;
-            panel.Children.Add(b);
+            panel.Children.Add(statLabel);
+            panel.Children.Add(removeButton);
             panel.Margin = Thickness.Parse("5");
+        }
+        
+        private void AddAction(object? sender, RoutedEventArgs e)
+        {
+            if(!TryGetNewStat(out Stat s)) return;
+            
+            _player.Stats.AddStat(s);
+            CreateStatLabel(s);
+            var num = _player.Stats.GetDamageValue(100, SourceType.Spell, DamageType.Fire);
+            _firedamage.OnNext("damage: " + Math.Round(num, 2));
         }
     }
 }

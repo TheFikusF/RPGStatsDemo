@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="415457ca-f6cc-46f3-8d9f-e7e5d656a722" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/RPGStatsMaker/Character.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RPGStatsMaker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPGStatsMaker/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RPGStatsMaker/MainWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/RPGStatsMaker/MainWindow.axaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RPGStatsMaker/MainWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RPGStatsMaker/MainWindow.axaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RPGStatsMaker/Stat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RPGStatsMaker/Stat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RPGStatsMaker/Stats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RPGStatsMaker/Stats.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,8 +73,17 @@
       <workItem from="1662933073350" duration="4527000" />
       <workItem from="1662938180544" duration="596000" />
       <workItem from="1662989212214" duration="600000" />
-      <workItem from="1663060686455" duration="2833000" />
+      <workItem from="1663060686455" duration="3641000" />
+      <workItem from="1663086756258" duration="8548000" />
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1663070972546</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1663070972546</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,5 +104,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>
